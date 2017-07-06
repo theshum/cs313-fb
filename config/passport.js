@@ -30,6 +30,7 @@ module.exports = function(passport) {
 				if(user){
 					return done(null, false, req.flash('signupMessage', 'That email already taken'));
 				} else {
+                    console.log("time to create a user");
 					var newUser = new User();
 					newUser.local.username = email;
 					newUser.local.password = newUser.generateHash(password);
