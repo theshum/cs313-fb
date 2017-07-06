@@ -14,6 +14,7 @@ var facebook = require('./routes/facebook');
 var app = express();
 
 require('./config/passport')(passport);
+require('./routes/routes.js')(app, passport);
 
 app.use(express.static(__dirname + '/public'));
 
